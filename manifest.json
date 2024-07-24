@@ -2,16 +2,18 @@
     "manifest_version":3,
     "name": "Ad Muter",
     "version": "1.0",
-    "description": "Automatically mutes videos during ads. This is just an MVP.",
-    "permissions":[ 
-        "activeTab"
+    "description": "Automatically mutes videos during ads. This is just a prototype.",
+    "permissions":[
+        "tabs", 
+        "activeTab",
+        "scripting"
     ],
     "background": {
         "service_worker": "background.js"
     },
     "content_scripts": [
         {
-            "matches": ["<all_urls>"],
+            "matches": ["*://*.youtube.com/*"],
             "js": ["content.js"]
         }
     ],
